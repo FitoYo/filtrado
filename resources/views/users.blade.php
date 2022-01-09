@@ -4,7 +4,9 @@
         <meta charset="utf-8">
 
         <title>Filtrado</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
 
     </head>
     <body>
@@ -26,15 +28,31 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-search">Seach</span>
+                                        <span class="glyphicon glyphicon-search">seach</span>
                                     </button>
                                 </div>
                             {{ Form::close() }}
                         </h1>
                     </div>
                 </div>
+                <div class="col-md-8">
+                    <table class="table table-hover table-striped">
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td> {{$user->id}} </td>
+                                    <td> {{$user->name}} </td>
+                                    <td> {{$user->email}} </td>
+                                    <td> {{$user->bio}} </td>
+                                </tr>
+                            @endforeach
+                        </tbody>                        
+                    </table>
+                    {{$users->render()}}
+                </div>
             </div>
         </div>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> -->
+    <script src="{{ asset('js/app.js') }}"></script>
 </html>
