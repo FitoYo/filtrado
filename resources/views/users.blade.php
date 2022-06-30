@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-search">seach</span>
+                                        <span>seach</span>
                                     </button>
                                 </div>
                             {{ Form::close() }}
